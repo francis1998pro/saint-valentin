@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <meta property="og:title" content="X500 Electric Scooter | Le compagnon urbain idéal">
+    <meta property="og:description" content="Découvrez le scooter électrique X500 : 25 miles d'autonomie, design pliable et absorption des chocs.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://votre-domaine.netlify.app/"> 
+    <meta property="og:site_name" content="Nom de votre Marque/Site">
+
+    <meta property="og:image" content="https://votre-domaine.netlify.app/images/og-image-trottinette.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@VotreCompteTwitter">
+
+    <title>St Valentin - L'Innovation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.3); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.15); }
+            60% { transform: scale(1); }
+        }
+        .heart-beat { animation: heartbeat 1.5s infinite; }
+        .gradient-bg { background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%); }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen flex flex-col items-center justify-center overflow-hidden font-sans h-screen overflow-hidden relative">
+
+    <audio id="bgMusic" loop>
+        <source src="Dadju - Par amour feat Maitre Gims-1.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas l'élément audio.
+    </audio>
+    <button id="playMusicBtn" class="fixed bottom-10 left-1/2 -translate-x-1/2 px-8 py-3 bg-pink-600 text-white font-semibold rounded-full shadow-2xl z-50 hover:bg-pink-700 hover:scale-110 active:scale-95 transition-all duration-300 ease-in-out border-2 border-white/20">
+    🎵 Jouer la musique
+</button>
+<div class="mt-10 text-center">
+    <button id="shareWA" class="flex items-center gap-2 mx-auto bg-[#25D366] text-white px-6 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition-transform">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.224-3.82l.303.18c1.397.831 3.013 1.27 4.673 1.271 4.886 0 8.863-3.977 8.865-8.865 0-2.367-.922-4.593-2.598-6.269s-3.903-2.596-6.269-2.596c-4.887 0-8.863 3.977-8.865 8.865-.001 1.635.447 3.226 1.298 4.615l.183.303-1.011 3.693 3.789-.994z"/></svg>
+        Partager avec mes proches
+    </button>
+</div>
+
+    <h1 class="text-2xl md:text-3xl font-bold text-white mb-8 drop-shadow-lg text-center px-4">
+    ❤️ Dans le jardin de mon cœur ❤️, c'est toi la plus belle fleur🌹🌹🌹<br> ❤️ Joyeuse Saint-Valentin ❤️.
+</h1>
+
+        <div id="heart-container" class="relative cursor-pointer select-none">
+    <img id="heart-img" src="image.png" alt="Grand cœur rouge" 
+         class="w-64 h-64 md:w-80 md:h-80 mx-auto heart-beat transition-transform duration-300 object-contain relative z-10">
+    
+    <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 md:w-[400px] md:h-[400px] -rotate-90">
+        <circle cx="50%" cy="50%" r="45%" stroke="rgba(255,255,255,0.2)" stroke-width="10" fill="transparent" />
+        
+        <circle id="progress-ring" cx="50%" cy="50%" r="45%" stroke="white" stroke-width="12" fill="transparent" 
+            stroke-dasharray="1000" stroke-dashoffset="1000" stroke-linecap="round"
+            class="transition-all duration-100 ease-linear shadow-lg" />
+    </svg>
+</div>
+
+        <p id="instruction" class="mt-10 text-white text-xl animate-bounce">Maintiens le clic !</p>
+    </div>
+
+    <div id="final-message" class="hidden fixed inset-0 bg-white/90 flex flex-col items-center justify-center z-50 p-6 text-center">
+        <h2 class="text-5xl font-extrabold text-pink-600 mb-4">Bonne Saint-Valentin !</h2>
+        <img src="https://i.imgur.com/W2t7P0l.png" alt="Message d'amour" class="mb-6 w-3/4 max-w-md animate-fade-in">
+        <p class="text-2xl text-gray-700 italic">"L'amour est la seule chose qui double chaque fois qu'on le partage."</p>
+        <button onclick="location.reload()" class="mt-8 px-6 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition">Recommencer</button>
+    </div>
+    <img src="imageco.png" 
+     class="absolute top-4 left-4 w-20 md:w-32 z-0 opacity-80 animate-pulse" 
+     alt="Déco haut gauche">
+
+<img src="imageco.png" 
+     class="absolute top-4 right-4 w-20 md:w-32 z-0 opacity-80 animate-pulse scale-x-[-1]" 
+     alt="Déco haut droite">
+
+<img src="imageco.png" 
+     class="absolute bottom-4 left-4 w-20 md:w-32 z-0 opacity-80 hover:rotate-12 transition-transform duration-500" 
+     alt="Déco bas gauche">
+
+<img src="imageco.png" 
+     class="absolute bottom-4 right-4 w-20 md:w-32 z-0 opacity-80 hover:-rotate-12 transition-transform duration-500" 
+     alt="Déco bas droite">
+
+
+    <script src="main.js"></script>
+</body>
+</html>
